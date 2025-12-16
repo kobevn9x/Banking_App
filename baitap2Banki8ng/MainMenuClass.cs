@@ -40,6 +40,8 @@ namespace baitap2Banking
                     continue;
                 }
 
+                Logger.LogAction($"User selected option: {selecttion}");
+
                 switch(selecttion)
                 {
                     case 1: regAcc();        break;
@@ -61,6 +63,7 @@ namespace baitap2Banking
 
         private static void regAcc()
         {
+            Logger.LogAction("User started account registration.");
             UserDB objnewUser = new UserDB(); //Tao obj moi
            
             int inputValue;
@@ -95,6 +98,7 @@ namespace baitap2Banking
 
         private static void gdKiemtratk()
         {
+            Logger.LogAction("User checked accounts.");
             Clear();
             TitleMenu();
             WriteLine(new string('=', 70));
@@ -107,6 +111,7 @@ namespace baitap2Banking
 
         private static void gdNaptien()
         {
+            Logger.LogAction("User started depositing money.");
             double tiengiaodich;
             string inputValue;
             bool isNumber;
@@ -170,6 +175,7 @@ namespace baitap2Banking
         }
         public static void gdRuttien()
         {
+            Logger.LogAction("User started withdrawing money.");
             double tiengiaodich;
             string inputValue;
             int userID;
@@ -239,6 +245,7 @@ namespace baitap2Banking
         }
         private static void gdChuyentien()
         {
+            Logger.LogAction("User started transferring money.");
             double tienGiaodich;
             string inputValue;
             int tkChuyen;
